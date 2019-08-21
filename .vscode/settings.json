@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "unordered_map": "cpp",
+        "cmath": "cpp",
+        "iostream": "cpp",
+        "random": "cpp"
+    },
+    "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
+    "editor.fontFamily": "SauceCodePro Nerd Font"
+}

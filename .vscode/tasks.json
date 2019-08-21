@@ -1,0 +1,84 @@
+{
+// 如需 tasks.json 格式的文件， 
+    // 請參與 https://go.microsoft.com/fwlink/?LinkId=733558
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "release",
+            "windows": {
+                "command": "C:\\MinGW\\bin\\g++.exe",
+                "args": [
+                    "${file}",
+                    "-o",
+                    "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                    "-lm",
+                    "-pipe",
+                    "-Wall",
+                    "-std=c++11",
+                    "-O2"
+                ],
+                "options": {
+                    "cwd": "C:\\MinGW\\bin"
+                }
+            },
+            "osx": {
+                "command": "/usr/local/Cellar/gcc/9.2.0/bin/g++-9",
+                "args": [
+                    "${file}",
+                    "-o",
+                    "${fileDirname}/${fileBasenameNoExtension}.out",
+                    "-lm",
+                    "-pipe",
+                    "-Wall",
+                    "-std=c++11",
+                    "-O2"
+                ],
+                "options": {
+                    "cwd": "/usr/local/Cellar/gcc/9.2.0/bin"
+                }
+            },
+            "linux": {
+                "command": "/usr/bin/g++",
+                "args": [
+                    "${file}",
+                    "-o",
+                    "${fileDirname}/${fileBasenameNoExtension}.o",
+                    "-lm",
+                    "-pipe",
+                    "-Wall",
+                    "-std=c++11",
+                    "-O2"
+                ],
+                "options": {
+                    "cwd": "/usr/bin"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "debug",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-lm",
+                "-std=c++11",
+                "-pipe",
+                "-Wall"
+            ],
+            "options": {
+                "cwd": "C:\\MinGW\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
